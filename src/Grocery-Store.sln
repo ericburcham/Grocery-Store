@@ -10,7 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{92B08C96-1643-492A-AD1F-CC474D969DD8}"
 	ProjectSection(SolutionItems) = preProject
 		References\ProductData.dll = References\ProductData.dll
-		References\ProductData.pdb = References\ProductData.pdb
 	EndProjectSection
 EndProject
 Global
