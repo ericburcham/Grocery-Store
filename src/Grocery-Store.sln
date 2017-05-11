@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStore", "GroceryStore\GroceryStore.csproj", "{2DF7C6D6-DE12-4F00-A4B6-F585739B3EBA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStore.Tests", "GroceryStore.Tests\GroceryStore.Tests.csproj", "{CB995792-1E7E-4A26-A333-4DE50269FFAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{92B08C96-1643-492A-AD1F-CC474D969DD8}"
+	ProjectSection(SolutionItems) = preProject
+		References\ProductData.dll = References\ProductData.dll
+		References\ProductData.pdb = References\ProductData.pdb
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
