@@ -25,7 +25,7 @@ namespace GroceryStore.Tests.ItemTests
             const string parameterName = "price";
 
             _action.Should().Throw<ArgumentException>()
-                .WithMessage($"An item cannot have a negative price. (Parameter '{parameterName}')")
+                .WithMessage($"An item cannot have a negative price.\r\nParameter name: {parameterName}")
                 .And.ParamName.Should().Be(parameterName);
 
             _item.Should().BeNull();
