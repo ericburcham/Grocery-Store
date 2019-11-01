@@ -16,7 +16,7 @@ namespace GroceryStore.Tests.ItemTests
         private Item _item;
 
         [OneTimeSetUp]
-        internal void OneTimeSetUp()
+        public void OneTimeSetUp()
         {
             _item = new Item(ITEM_SKU, ITEM_NAME, ITEM_PRICE);
         }

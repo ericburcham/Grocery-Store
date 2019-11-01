@@ -6,13 +6,13 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.SaleTests
 {
     [TestFixture]
-    internal class WhenCreatingASaleWithADollarOffItem
+    internal class WhenCreatingASaleWithASingleDollarOffItem
     {
         private IConfigureDeals _dealConfigurator;
         private Sale _sale;
 
         [OneTimeSetUp]
-        internal void OneTimeSetup()
+        public void OneTimeSetUp()
         {
             _dealConfigurator = new DealConfigurator();
             _dealConfigurator.AddDeal("1245", new DollarOffDeal());

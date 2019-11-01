@@ -1,24 +1,33 @@
-﻿namespace GroceryStore
+﻿using GroceryStore.Deals;
+
+namespace GroceryStore
 {
     public class LineItem
     {
-        public LineItem(Item item)
+        private readonly IDeal _deal;
+
+        public LineItem(Item item, IProvideDeals dealProvider = null)
         {
             Item = item;
+            _deal = dealProvider == null ? new DoNothingDeal() : dealProvider.GetDeal(Sku);
             AddOne();
         }
 
+        public decimal Discount => _deal.GetDiscount(Quantity, Price);
+
         private Item Item { get; }
 
-        public int Quantity { get; private set; }
+        public string Name => Item.Name;
+
+        public decimal Price => Item.Price;
+
+        public uint Quantity { get; private set; }
 
         public decimal RawTotal => Quantity * Item.Price;
 
         public string Sku => Item.Sku;
 
-        public string Name => Item.Name;
-
-        public decimal Price => Item.Price;
+        public decimal Subtotal => RawTotal - Discount;
 
         public void AddOne()
         {

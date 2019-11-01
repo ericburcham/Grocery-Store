@@ -1,10 +1,10 @@
 ﻿namespace GroceryStore.Deals
 {
-    public class DealConfigurator : IConfigureDeals
+    public class DealConfigurator : DealProvider, IConfigureDeals
     {
         public void AddDeal(string sku, IDeal deal)
         {
-            throw new System.NotImplementedException();
+            Deals.Add(sku, deal);
         }
     }
 }

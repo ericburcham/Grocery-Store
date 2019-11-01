@@ -2,5 +2,6 @@
 {
     public interface IProvideDeals
     {
+        IDeal GetDeal(string sku);
     }
 }
