@@ -1,10 +1,9 @@
 ﻿using System;
-
 using FluentAssertions;
-
+using GroceryStore.Inventory;
 using NUnit.Framework;
 
-namespace GroceryStore.Tests.ItemBuilderTests
+namespace GroceryStore.Tests.Inventory.ItemBuilderTests
 {
     [TestFixture]
     public class WhenBuildingForAnInvalidSku

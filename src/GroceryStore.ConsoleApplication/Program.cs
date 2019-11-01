@@ -1,4 +1,5 @@
 ﻿using System;
+using GroceryStore.Inventory;
 
 namespace GroceryStore.ConsoleApplication
 {

@@ -1,4 +1,4 @@
-﻿namespace GroceryStore
+﻿namespace GroceryStore.Inventory
 {
     public interface IBuildItems
     {
