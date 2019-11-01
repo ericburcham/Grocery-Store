@@ -7,15 +7,15 @@ namespace GroceryStore.Tests.SaleTests
     [TestFixture]
     public class WhenCreatingASaleWithADollarOffItem
     {
-        private IManageDeals _dealConfigurator;
+        private IManageDeals _dealManager;
         private Sale _sale;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            _dealConfigurator = new DealManager();
-            _dealConfigurator.AddDeal("1245", new DollarOffDeal());
-            _sale = new Sale(_dealConfigurator, new ItemBuilder());
+            _dealManager = new DealManager();
+            _dealManager.AddDeal("1245", new DollarOffDeal());
+            _sale = new Sale(_dealManager, new ItemBuilder());
             _sale.AddItem("1245");
         }
 
