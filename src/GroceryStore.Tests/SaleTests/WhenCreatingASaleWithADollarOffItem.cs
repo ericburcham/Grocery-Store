@@ -8,13 +8,13 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.SaleTests
 {
     [TestFixture]
-    class WhenCreatingASaleWithADollarOffItem
+    public class WhenCreatingASaleWithADollarOffItem
     {
         private IConfigureDeals _dealConfigurator;
         private Sale _sale;
 
         [OneTimeSetUp]
-        private void OneTimeSetup()
+        public void OneTimeSetup()
         {
             _dealConfigurator = new DealConfigurator();
             _dealConfigurator.AddDeal("1245", new DollarOffDeal());
