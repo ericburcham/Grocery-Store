@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using FluentAssertions;
+using GroceryStore.Inventory;
 using NUnit.Framework;
 
 namespace GroceryStore.Tests.SaleTests
