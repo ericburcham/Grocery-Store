@@ -27,7 +27,7 @@ namespace GroceryStore.Deals
     {
         public decimal GetDiscount(uint quantity, decimal price)
         {
-            throw new System.NotImplementedException();
+            return quantity;
         }
     }
 

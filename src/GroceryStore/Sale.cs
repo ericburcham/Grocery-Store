@@ -7,10 +7,12 @@ namespace GroceryStore
 {
     public class Sale
     {
+        private readonly IManageDeals _dealManager;
         private readonly IBuildItems _itemBuilder;
 
         public Sale(IManageDeals dealManager, IBuildItems itemBuilder)
         {
+            _dealManager = dealManager;
             _itemBuilder = itemBuilder;
             LineItems = new List<LineItem>();
         }
@@ -30,7 +32,7 @@ namespace GroceryStore
             else
             {
                 var item = _itemBuilder.BuildItem(sku);
-                var lineItem = new LineItem(item, null);
+                var lineItem = new LineItem(item, _dealManager);
                 LineItems.Add(lineItem);
             }
         }
