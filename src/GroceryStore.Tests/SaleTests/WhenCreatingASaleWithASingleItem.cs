@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.SaleTests
 {
     [TestFixture]
-    public class When_Creating_A_Sale_With_A_Single_Item
+    public class WhenCreatingASaleWithASingleItem
     {
         private Sale _sale;
 
@@ -19,13 +19,13 @@ namespace GroceryStore.Tests.SaleTests
         }
 
         [Test]
-        public void Sale_Total_Should_Be_Correct()
+        public void SaleTotalShouldBeCorrect()
         {
             _sale.Total.Should().Be(1.25M);
         }
 
         [Test]
-        public void There_Should_Be_One_Line_Items()
+        public void ThereShouldBeOneLineItem()
         {
             _sale.LineItems.Count.Should().Be(1);
         }

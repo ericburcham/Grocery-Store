@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.ItemBuilderTests
 {
     [TestFixture]
-    public class When_Building_For_An_Invalid_Sku
+    public class WhenBuildingForAnInvalidSku
     {
         private ItemBuilder _itemBuilder;
 
@@ -18,7 +18,7 @@ namespace GroceryStore.Tests.ItemBuilderTests
         }
 
         [Test]
-        public void Build_Item_Should_Throw_An_ArgumentException()
+        public void BuildItemShouldThrowAnArgumentException()
         {
             _itemBuilder.Invoking(ib => ib.BuildItem("I_AM_NOT_A_VALID_SKU"))
                 .Should().Throw<ArgumentException>()
