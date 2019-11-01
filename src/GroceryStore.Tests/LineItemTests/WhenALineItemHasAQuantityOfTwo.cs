@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.LineItemTests
 {
     [TestFixture]
-    public class When_A_LineItem_Has_A_Quantity_Of_Two
+    public class WhenALineItemHasAQuantityOfTwo
     {
         private LineItem _lineItem;
 
@@ -17,13 +17,13 @@ namespace GroceryStore.Tests.LineItemTests
         }
 
         [Test]
-        public void The_Quantity_Should_Be_Two()
+        public void TheQuantityShouldBeTwo()
         {
             _lineItem.Quantity.Should().Be(2);
         }
 
         [Test]
-        public void The_RawTotal_Should_Be_Correct()
+        public void TheRawTotalShouldBeCorrect()
         {
             var expectedRawTotal = _lineItem.Price * _lineItem.Quantity;
             _lineItem.RawTotal.Should().Be(expectedRawTotal);

@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.ItemBuilderTests
 {
     [TestFixture]
-    public class When_Building_Rubber_Bands
+    public class WhenBuildingRubberBands
     {
         private Item _item;
         
@@ -19,19 +19,19 @@ namespace GroceryStore.Tests.ItemBuilderTests
         }
 
         [Test]
-        public void Name_Should_Be_Correct()
+        public void NameShouldBeCorrect()
         {
             _item.Name.Should().Be("Rubber Bands");
         }
 
         [Test]
-        public void Price_Should_Be_Correct()
+        public void PriceShouldBeCorrect()
         {
             _item.Price.Should().Be(10M);
         }
 
         [Test]
-        public void Sku_Should_Be_Correct()
+        public void SkuShouldBeCorrect()
         {
             _item.Sku.Should().Be("839");
         }

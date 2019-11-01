@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.ItemBuilderTests
 {
     [TestFixture]
-    public class When_Building_Pepto_Bismol
+    public class WhenBuildingBananas
     {
         private Item _item;
         
@@ -15,25 +15,25 @@ namespace GroceryStore.Tests.ItemBuilderTests
         public void OneTimeSetUp()
         {
             _itemBuilder = new ItemBuilder();
-            _item = _itemBuilder.BuildItem("99999");
+            _item = _itemBuilder.BuildItem("1245");
         }
 
         [Test]
-        public void Name_Should_Be_Correct()
+        public void NameShouldBeCorrect()
         {
-            _item.Name.Should().Be("Pepto Bismol");
+            _item.Name.Should().Be("Bananas");
         }
 
         [Test]
-        public void Price_Should_Be_Correct()
+        public void PriceShouldBeCorrect()
         {
-            _item.Price.Should().Be(4.88M);
+            _item.Price.Should().Be(1.25M);
         }
 
         [Test]
-        public void Sku_Should_Be_Correct()
+        public void SkuShouldBeCorrect()
         {
-            _item.Sku.Should().Be("99999");
+            _item.Sku.Should().Be("1245");
         }
     }
 }

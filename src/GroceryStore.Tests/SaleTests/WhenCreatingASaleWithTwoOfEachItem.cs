@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.SaleTests
 {
     [TestFixture]
-    public class When_Creating_A_Sale_With_Two_Of_Each_Item
+    public class WhenCreatingASaleWithTwoOfEachItem
     {
         private Sale _sale;
 
@@ -26,14 +26,14 @@ namespace GroceryStore.Tests.SaleTests
         }
 
         [Test]
-        public void Sale_Total_Should_Be_Correct()
+        public void SaleTotalShouldBeCorrect()
         {
             const decimal priceForTwoOfEachItem = 2 * (1.25M + 4.88M + 10M);
             _sale.Total.Should().Be(priceForTwoOfEachItem);
         }
 
         [Test]
-        public void There_Should_Be_Three_Line_Items()
+        public void ThereShouldBeThreeLineItems()
         {
             _sale.LineItems.Count.Should().Be(3);
         }
