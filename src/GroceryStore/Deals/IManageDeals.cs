@@ -1,4 +1,7 @@
-﻿namespace GroceryStore.Deals
+﻿using System;
+using System.Collections.Generic;
+
+namespace GroceryStore.Deals
 {
     public interface IManageDeals
     {
@@ -12,6 +15,14 @@
         decimal GetDiscount(uint quantity, decimal price);
     }
 
+    public class DoNothingDeal : IDeal
+    {
+        public decimal GetDiscount(uint quantity, decimal price)
+        {
+            return 0;
+        }
+    }
+
     public class DollarOffDeal : IDeal
     {
         public decimal GetDiscount(uint quantity, decimal price)
@@ -22,14 +33,19 @@
 
     public class DealManager : IManageDeals
     {
+        private readonly Dictionary<string, IDeal> ActiveDeals = new Dictionary<string, IDeal>(StringComparer.Ordinal);
+
         public void AddDeal(string sku, IDeal deal)
         {
-            throw new System.NotImplementedException();
+            ActiveDeals.Add(sku, deal);
         }
 
         public IDeal GetDeal(string sku)
         {
-            throw new System.NotImplementedException();
+            if (ActiveDeals.ContainsKey(sku))
+                return ActiveDeals[sku];
+            else
+                return new DoNothingDeal();
         }
     }
 }

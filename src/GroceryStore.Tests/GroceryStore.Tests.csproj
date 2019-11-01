@@ -18,8 +18,4 @@
     <ProjectReference Include="..\GroceryStore\GroceryStore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Deals\" />
-  </ItemGroup>
-
 </Project>
