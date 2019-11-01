@@ -1,11 +1,11 @@
 ﻿using FluentAssertions;
-
+using GroceryStore.Inventory;
 using NUnit.Framework;
 
-namespace GroceryStore.Tests.ItemBuilderTests
+namespace GroceryStore.Tests.Inventory.ItemBuilderTests
 {
     [TestFixture]
-    public class WhenBuildingRubberBands
+    public class WhenBuildingBananas
     {
         private Item _item;
         
@@ -15,25 +15,25 @@ namespace GroceryStore.Tests.ItemBuilderTests
         public void OneTimeSetUp()
         {
             _itemBuilder = new ItemBuilder();
-            _item = _itemBuilder.BuildItem("839");
+            _item = _itemBuilder.BuildItem("1245");
         }
 
         [Test]
         public void NameShouldBeCorrect()
         {
-            _item.Name.Should().Be("Rubber Bands");
+            _item.Name.Should().Be("Bananas");
         }
 
         [Test]
         public void PriceShouldBeCorrect()
         {
-            _item.Price.Should().Be(10M);
+            _item.Price.Should().Be(1.25M);
         }
 
         [Test]
         public void SkuShouldBeCorrect()
         {
-            _item.Sku.Should().Be("839");
+            _item.Sku.Should().Be("1245");
         }
     }
 }
