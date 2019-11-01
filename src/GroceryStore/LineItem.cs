@@ -10,7 +10,7 @@
 
         private Item Item { get; }
 
-        public int Quantity { get; private set; }
+        public uint Quantity { get; private set; }
 
         public decimal RawTotal => Quantity * Item.Price;
 

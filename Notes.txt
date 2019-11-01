@@ -1,0 +1,32 @@
+Talk through the existing design
+
+Agree on a design
+
+Make everything compile
+
+Confirm the test is failing
+
+Update LineItem to use the dealProvider to store its deal
+
+Update Sale to use the dealProvider
+
+Update Sale to use Subtotal instead of RawTotal
+
+Update LineItem to have
+  Discount
+  Subtotal
+
+Build DealManager
+  AddDeal
+  GetDeals
+
+Build DollarOffDeal
+
+Extract DealProvider (ISP)
+
+
+
+Fix OneTimeSetup / etc... to be public
+Add NSubstitute
+LineItem.Quantity to uint
+ReSharper full cleanup

@@ -3,7 +3,7 @@ using GroceryStore.Inventory;
 
 namespace GroceryStore.ConsoleApplication
 {
-    class Program
+    internal class Program
     {
         private static bool _lastSkuWasValid;
 
@@ -11,7 +11,7 @@ namespace GroceryStore.ConsoleApplication
 
         private static Sale _sale = new Sale(new ItemBuilder());
 
-        static void Main()
+        private static void Main()
         {
             Console.SetBufferSize(1000, 9999);
             Console.ForegroundColor = ConsoleColor.White;
@@ -87,26 +87,23 @@ namespace GroceryStore.ConsoleApplication
                 Console.WriteLine();
             }
 
-            if (_sale.LineItems.Count <= 0)
-            {
-                return;
-            }
+            if (_sale.LineItems.Count <= 0) return;
 
-            Console.WriteLine($"{"SKU", -8}{"Product", -16}{"Qty", -4}{"Subtotal", -8}");
+            Console.WriteLine($"{"SKU",-8}{"Product",-16}{"Qty",-4}{"Subtotal",-8}");
             Console.WriteLine("------- --------------- --- --------");
             foreach (var lineItem in _sale.LineItems)
             {
-                var itemSku = $"{lineItem.Sku, -8}";
-                var itemName = $"{lineItem.Name, -16}";
-                var itemQuantity = $"{lineItem.Quantity, -4}";
-                var itemSubtotal = $"{lineItem.RawTotal.ToString("C"), -8}";
+                var itemSku = $"{lineItem.Sku,-8}";
+                var itemName = $"{lineItem.Name,-16}";
+                var itemQuantity = $"{lineItem.Quantity,-4}";
+                var itemSubtotal = $"{lineItem.RawTotal.ToString("C"),-8}";
                 Console.WriteLine(itemSku + itemName + itemQuantity + itemSubtotal);
             }
 
             Console.WriteLine();
-            Console.WriteLine($"{"Sale Total", 36}");
-            Console.WriteLine($"{"----------", 36}");
-            Console.WriteLine($"{_sale.Total.ToString("C"), 36}");
+            Console.WriteLine($"{"Sale Total",36}");
+            Console.WriteLine($"{"----------",36}");
+            Console.WriteLine($"{_sale.Total.ToString("C"),36}");
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
