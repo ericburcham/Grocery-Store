@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GroceryStore.Deals;
 using GroceryStore.Inventory;
 
 namespace GroceryStore
@@ -8,7 +9,7 @@ namespace GroceryStore
     {
         private readonly IBuildItems _itemBuilder;
 
-        public Sale(IBuildItems itemBuilder)
+        public Sale(IManageDeals dealManager, IBuildItems itemBuilder)
         {
             _itemBuilder = itemBuilder;
             LineItems = new List<LineItem>();
@@ -29,7 +30,7 @@ namespace GroceryStore
             else
             {
                 var item = _itemBuilder.BuildItem(sku);
-                var lineItem = new LineItem(item);
+                var lineItem = new LineItem(item, null);
                 LineItems.Add(lineItem);
             }
         }

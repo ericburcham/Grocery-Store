@@ -9,7 +9,7 @@ namespace GroceryStore.ConsoleApplication
 
         private static bool _quit;
 
-        private static Sale _sale = new Sale(new ItemBuilder());
+        private static Sale _sale = new Sale(null, new ItemBuilder());
 
         private static void Main()
         {
@@ -25,7 +25,7 @@ namespace GroceryStore.ConsoleApplication
             if (string.IsNullOrWhiteSpace(sku))
             {
                 _lastSkuWasValid = false;
-                _sale = new Sale(new ItemBuilder());
+                _sale = new Sale(null, new ItemBuilder());
                 return;
             }
 

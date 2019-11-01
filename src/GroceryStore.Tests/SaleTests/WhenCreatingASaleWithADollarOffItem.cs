@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using GroceryStore.Deals;
 using GroceryStore.Inventory;
 using NUnit.Framework;
 
