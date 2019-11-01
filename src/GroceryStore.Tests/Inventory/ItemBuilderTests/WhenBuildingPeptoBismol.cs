@@ -12,7 +12,7 @@ namespace GroceryStore.Tests.Inventory.ItemBuilderTests
         private ItemBuilder _itemBuilder;
 
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        internal void OneTimeSetUp()
         {
             _itemBuilder = new ItemBuilder();
             _item = _itemBuilder.BuildItem("99999");

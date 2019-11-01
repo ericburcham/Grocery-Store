@@ -9,7 +9,7 @@ namespace GroceryStore.Tests.LineItemTests
         private LineItem _lineItem;
 
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        internal void OneTimeSetUp()
         {
             var item = new Item("sku", "name", 1);
             _lineItem = new LineItem(item);

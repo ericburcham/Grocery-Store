@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
+using GroceryStore.Deals;
 using GroceryStore.Inventory;
 using NUnit.Framework;
 
 namespace GroceryStore.Tests.SaleTests
 {
     [TestFixture]
-    class WhenCreatingASaleWithADollarOffItem
+    internal class WhenCreatingASaleWithADollarOffItem
     {
         private IConfigureDeals _dealConfigurator;
         private Sale _sale;
 
         [OneTimeSetUp]
-        private void OneTimeSetup()
+        internal void OneTimeSetup()
         {
             _dealConfigurator = new DealConfigurator();
             _dealConfigurator.AddDeal("1245", new DollarOffDeal());
