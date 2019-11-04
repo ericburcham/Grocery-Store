@@ -19,7 +19,7 @@ namespace GroceryStore
 
         public IList<LineItem> LineItems { get; }
 
-        public decimal Total => LineItems.Sum(item => item.RawTotal);
+        public decimal Total => LineItems.Sum(item => item.Subtotal);
 
         public void AddItem(string sku)
         {
