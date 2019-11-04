@@ -22,9 +22,11 @@ namespace GroceryStore.Tests.LineItemTests
             var substituteDealProvider = Substitute.For<IProvideDeals>();
             substituteDealProvider.GetDeal(Arg.Any<string>()).Returns(substituteDeal);
 
+            var sku = "1245";
             var itemBuilder = new ItemBuilder();
-            var item = itemBuilder.BuildItem("1245");
-            _lineItem = new LineItem(item, substituteDealProvider);
+            var item = itemBuilder.BuildItem(sku);
+            var deal = substituteDealProvider.GetDeal(item.Sku);
+            _lineItem = new LineItem(item, deal);
         }
 
         [Test]

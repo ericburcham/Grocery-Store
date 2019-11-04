@@ -6,10 +6,10 @@ namespace GroceryStore
     {
         private readonly IDeal _deal;
 
-        public LineItem(Item item, IProvideDeals dealProvider = null)
+        public LineItem(Item item, IDeal deal = null)
         {
             Item = item;
-            _deal = dealProvider == null ? new DoNothingDeal() : dealProvider.GetDeal(Sku);
+            _deal = deal ?? new DoNothingDeal();
             AddOne();
         }
 

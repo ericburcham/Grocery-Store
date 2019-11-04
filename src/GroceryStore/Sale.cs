@@ -33,7 +33,8 @@ namespace GroceryStore
             else
             {
                 var item = _itemBuilder.BuildItem(sku);
-                var lineItem = new LineItem(item, _dealProvider);
+                var deal = _dealProvider.GetDeal(item.Sku);
+                var lineItem = new LineItem(item, deal);
                 LineItems.Add(lineItem);
             }
         }
