@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.Discounts.DollarOffDiscountTests
 {
     [TestFixture]
-    public class WhenCreatingADollarOffDiscount
+    public class WhenCreatingATenPercentDiscount
     {
         private const int QUANTITY = 100;
 

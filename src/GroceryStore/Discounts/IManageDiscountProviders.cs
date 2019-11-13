@@ -1,9 +1,7 @@
 ﻿namespace GroceryStore.Discounts
 {
-    public interface IManageDiscounts
+    public interface IManageDiscountProviders : IProvideDiscountProviders
     {
         void AddDiscount(string sku, IProvideDiscounts discount);
-
-        IProvideDiscounts GetDiscount(string sku);
     }
 }

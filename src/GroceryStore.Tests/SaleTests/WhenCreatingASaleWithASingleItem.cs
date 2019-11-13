@@ -9,18 +9,18 @@ namespace GroceryStore.Tests.SaleTests
     [TestFixture]
     public class WhenCreatingASaleWithASingleItem
     {
-        private IManageDiscounts _discountManager;
+        private IManageDiscountProviders _discountProviderManager;
 
         private Sale _sale;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            _discountManager = Substitute.For<IManageDiscounts>();
+            _discountProviderManager = Substitute.For<IManageDiscountProviders>();
             var discount = Substitute.For<IProvideDiscounts>();
-            _discountManager.GetDiscount(Arg.Any<string>()).Returns(discount);
+            _discountProviderManager.GetDiscount(Arg.Any<string>()).Returns(discount);
 
-            _sale = new Sale(_discountManager, new ItemBuilder());
+            _sale = new Sale(_discountProviderManager, new ItemBuilder());
             _sale.AddItem("1245");
         }
 
@@ -39,7 +39,7 @@ namespace GroceryStore.Tests.SaleTests
         [Test]
         public void GetDiscountShouldBeInvokedOnTheDiscountManager()
         {
-            _discountManager.Received(1).GetDiscount("1245");
+            _discountProviderManager.Received(1).GetDiscount("1245");
         }
     }
 }

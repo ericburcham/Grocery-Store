@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
 using GroceryStore.Discounts;
-using NSubstitute;
 using NUnit.Framework;
 
 namespace GroceryStore.Tests.Discounts.DiscountManagerTests
@@ -12,19 +7,19 @@ namespace GroceryStore.Tests.Discounts.DiscountManagerTests
     [TestFixture]
     public class WhenAddingADiscount
     {
-        private IManageDiscounts _discountManager;
+        private IManageDiscountProviders _discountProviderManager;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            _discountManager = new DiscountManager();
-            _discountManager.AddDiscount("sku", new DoNothingDiscount());
+            _discountProviderManager = new DiscountProviderManager();
+            _discountProviderManager.AddDiscount("sku", new DoNothingDiscount());
         }
 
         [Test]
         public void GetDiscountShouldReturnTheSameTypeOfDiscountThatWasAdded()
         {
-            _discountManager.GetDiscount("sku").Should().BeOfType<DoNothingDiscount>();
+            _discountProviderManager.GetDiscount("sku").Should().BeOfType<DoNothingDiscount>();
         }
     }
 }
