@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace GroceryStore.Discounts
+﻿namespace GroceryStore.Discounts
 {
     public class DiscountManager : DiscountProvider, IManageDiscounts
     {

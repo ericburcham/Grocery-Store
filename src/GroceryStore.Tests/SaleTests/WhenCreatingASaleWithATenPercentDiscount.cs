@@ -15,7 +15,7 @@ namespace GroceryStore.Tests.SaleTests
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            _discountProviderManager = new DiscountManager();   
+            _discountProviderManager = new DiscountManager();
             _discountProviderManager.AddDiscount("839", new TenPercentDiscount());
             _sale = new Sale(_discountProviderManager, _itemBuilder);
             _sale.AddItem("839");

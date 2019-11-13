@@ -27,7 +27,7 @@ namespace GroceryStore
         public decimal Price => Item.Price;
 
         public decimal Discount => _discountProvider.GetDiscount(Sku, Quantity, Price);
-        
+
         public decimal Subtotal => RawTotal - Discount;
 
         public void AddOne()

@@ -24,4 +24,4 @@ namespace GroceryStore.Tests.Discounts.TenPercentDiscountTests
             _discount.Should().Be(QUANTITY * PRICE * 0.1M);
         }
     }
-};
+}

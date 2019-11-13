@@ -1,6 +1,4 @@
 ﻿using FluentAssertions;
-using GroceryStore.Discounts;
-using NSubstitute;
 using NUnit.Framework;
 
 namespace GroceryStore.Tests.LineItemTests
@@ -17,15 +15,15 @@ namespace GroceryStore.Tests.LineItemTests
         }
 
         [Test]
-        public void TheRawTotalShouldBeCorrect()
-        {
-            _lineItem.RawTotal.Should().Be(_lineItem.Quantity * _lineItem.Price);
-        }
-
-        [Test]
         public void TheDiscountShouldBeCorrect()
         {
             _lineItem.Discount.Should().Be(0M);
+        }
+
+        [Test]
+        public void TheRawTotalShouldBeCorrect()
+        {
+            _lineItem.RawTotal.Should().Be(_lineItem.Quantity * _lineItem.Price);
         }
 
         [Test]

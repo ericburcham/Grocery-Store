@@ -22,15 +22,15 @@ namespace GroceryStore.Tests.LineItemTests
         }
 
         [Test]
-        public void TheRawTotalShouldBeCorrect()
-        {
-            _lineItem.RawTotal.Should().Be(_lineItem.Quantity * _lineItem.Price);
-        }
-
-        [Test]
         public void TheDiscountShouldBeCorrect()
         {
             _lineItem.Discount.Should().Be(DISCOUNT);
+        }
+
+        [Test]
+        public void TheRawTotalShouldBeCorrect()
+        {
+            _lineItem.RawTotal.Should().Be(_lineItem.Quantity * _lineItem.Price);
         }
 
         [Test]

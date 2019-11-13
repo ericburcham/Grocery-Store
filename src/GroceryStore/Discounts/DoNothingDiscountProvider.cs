@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GroceryStore.Discounts
+﻿namespace GroceryStore.Discounts
 {
     internal class DoNothingDiscountProvider : IProvideDiscounts
     {

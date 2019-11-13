@@ -1,7 +1,5 @@
 ﻿using FluentAssertions;
-using GroceryStore.Discounts;
 using GroceryStore.Inventory;
-using NSubstitute;
 using NUnit.Framework;
 
 namespace GroceryStore.Tests.SaleTests
