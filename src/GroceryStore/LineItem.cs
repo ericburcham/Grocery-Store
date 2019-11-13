@@ -1,9 +1,14 @@
-﻿namespace GroceryStore
+﻿using GroceryStore.Discounts;
+
+namespace GroceryStore
 {
     public class LineItem
     {
-        public LineItem(Item item)
+        private readonly IProvideDiscounts _discountProvider;
+
+        public LineItem(Item item, IProvideDiscounts discountProvider = null)
         {
+            _discountProvider = discountProvider;
             Item = item;
             AddOne();
         }
@@ -19,6 +24,10 @@
         public string Name => Item.Name;
 
         public decimal Price => Item.Price;
+
+        public decimal Discount => _discountProvider.GetDiscount(Quantity, Price);
+        
+        public decimal Subtotal => RawTotal - Discount;
 
         public void AddOne()
         {
