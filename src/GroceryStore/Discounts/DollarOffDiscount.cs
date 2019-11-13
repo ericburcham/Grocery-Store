@@ -1,10 +1,9 @@
 ﻿namespace GroceryStore.Discounts
 {
-    public class DollarOffDiscount : IProvideDiscounts
+    public class DollarOffDiscount : FixedDiscount
     {
-        public decimal GetDiscount(uint quantity, decimal price)
+        public DollarOffDiscount() : base(1M)
         {
-            return quantity;
         }
     }
 }
