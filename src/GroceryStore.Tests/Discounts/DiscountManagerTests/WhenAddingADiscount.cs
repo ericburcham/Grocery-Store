@@ -7,19 +7,19 @@ namespace GroceryStore.Tests.Discounts.DiscountManagerTests
     [TestFixture]
     public class WhenAddingADiscount
     {
-        private IManageDiscountProviders _discountProviderManager;
+        private IManageDiscounts _discountManager;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            _discountProviderManager = new DiscountProviderManager();
-            _discountProviderManager.AddDiscount("sku", new DoNothingDiscount());
+            _discountManager = new DiscountManager();
+            _discountManager.AddDiscount("sku", new DoNothingDiscount());
         }
 
         [Test]
         public void GetDiscountShouldReturnTheSameTypeOfDiscountThatWasAdded()
         {
-            _discountProviderManager.GetDiscount("sku").Should().BeOfType<DoNothingDiscount>();
+            _discountManager.GetDiscount("sku", 1, 0M).Should().Be(0);
         }
     }
 }

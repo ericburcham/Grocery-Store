@@ -8,14 +8,14 @@ namespace GroceryStore.Tests.SaleTests
     [TestFixture]
     public class WhenCreatingASaleWithATenPercentDiscount
     {
-        private IManageDiscountProviders _discountProviderManager;
+        private IManageDiscounts _discountProviderManager;
         private readonly ItemBuilder _itemBuilder = new ItemBuilder();
         private Sale _sale;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            _discountProviderManager = new DiscountProviderManager();   
+            _discountProviderManager = new DiscountManager();   
             _discountProviderManager.AddDiscount("839", new TenPercentDiscount());
             _sale = new Sale(_discountProviderManager, _itemBuilder);
             _sale.AddItem("839");

@@ -8,7 +8,7 @@ namespace GroceryStore
 
         public LineItem(Item item, IProvideDiscounts discountProvider = null)
         {
-            _discountProvider = discountProvider ?? new DoNothingDiscount();
+            _discountProvider = discountProvider ?? new DoNothingDiscountProvider();
 
             Item = item;
             AddOne();
@@ -26,7 +26,7 @@ namespace GroceryStore
 
         public decimal Price => Item.Price;
 
-        public decimal Discount => _discountProvider.GetDiscount(Quantity, Price);
+        public decimal Discount => _discountProvider.GetDiscount(Sku, Quantity, Price);
         
         public decimal Subtotal => RawTotal - Discount;
 

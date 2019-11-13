@@ -7,13 +7,13 @@ namespace GroceryStore
 {
     public class Sale
     {
-        private readonly IProvideDiscountProviders _discountProviderProvider;
+        private readonly IProvideDiscounts _discountProvider;
 
         private readonly IBuildItems _itemBuilder;
 
-        public Sale(IProvideDiscountProviders discountProviderProvider, IBuildItems itemBuilder)
+        public Sale(IProvideDiscounts discountProvider, IBuildItems itemBuilder)
         {
-            _discountProviderProvider = discountProviderProvider ?? new DoNothingDiscountProviderProvider();
+            _discountProvider = discountProvider ?? new DoNothingDiscountProvider();
             _itemBuilder = itemBuilder;
             LineItems = new List<LineItem>();
         }
@@ -33,8 +33,7 @@ namespace GroceryStore
             else
             {
                 var item = _itemBuilder.BuildItem(sku);
-                var itemDiscount = _discountProviderProvider.GetDiscount(sku);
-                var lineItem = new LineItem(item, itemDiscount);
+                var lineItem = new LineItem(item, _discountProvider);
                 LineItems.Add(lineItem);
             }
         }

@@ -2,6 +2,6 @@
 {
     public interface IProvideDiscounts
     {
-        decimal GetDiscount(uint quantity, decimal price);
+        decimal GetDiscount(string sku, uint quantity, decimal price);
     }
 }

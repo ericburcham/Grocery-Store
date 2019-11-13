@@ -1,6 +1,6 @@
 ﻿namespace GroceryStore.Discounts
 {
-    public class DoNothingDiscount : IProvideDiscounts
+    public class DoNothingDiscount : IDiscountStrategy
     {
         public decimal GetDiscount(uint quantity, decimal price)
         {

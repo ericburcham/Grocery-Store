@@ -1,6 +1,6 @@
 ﻿namespace GroceryStore.Discounts
 {
-    public abstract class FixedDiscount : IProvideDiscounts
+    public abstract class FixedDiscount : IDiscountStrategy
     {
         private readonly decimal _discount;
 

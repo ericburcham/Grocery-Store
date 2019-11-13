@@ -1,6 +1,6 @@
 ﻿namespace GroceryStore.Discounts
 {
-    public abstract class PercentDiscount : IProvideDiscounts
+    public abstract class PercentDiscount : IDiscountStrategy
     {
         private readonly decimal _discountMultiplier;
 

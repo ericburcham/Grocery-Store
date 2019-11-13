@@ -16,7 +16,7 @@ namespace GroceryStore.Tests.LineItemTests
         public void OneTimeSetUp()
         {
             var discountProvider = Substitute.For<IProvideDiscounts>();
-            discountProvider.GetDiscount(Arg.Any<uint>(), Arg.Any<decimal>()).Returns(DISCOUNT);
+            discountProvider.GetDiscount(Arg.Any<string>(), Arg.Any<uint>(), Arg.Any<decimal>()).Returns(DISCOUNT);
 
             _lineItem = new LineItem(new Item("sku", "I don't matter one bit", 1.25M), discountProvider);
         }
