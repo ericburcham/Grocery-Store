@@ -9,7 +9,7 @@ namespace GroceryStore.Tests.SaleTests
     public class WhenCreatingASaleWithADollarOffItem
     {
         private IManageDiscounts _discountManager;
-        private ItemBuilder _itemBuilder = new ItemBuilder();
+        private readonly ItemBuilder _itemBuilder = new ItemBuilder();
         private Sale _sale;
 
         [OneTimeSetUp]

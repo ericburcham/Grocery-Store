@@ -1,5 +1,7 @@
 ﻿using FluentAssertions;
+using GroceryStore.Discounts;
 using GroceryStore.Inventory;
+using NSubstitute;
 using NUnit.Framework;
 
 namespace GroceryStore.Tests.SaleTests
@@ -7,12 +9,18 @@ namespace GroceryStore.Tests.SaleTests
     [TestFixture]
     public class WhenCreatingASaleWithASingleItem
     {
+        private IManageDiscounts _discountManager;
+
         private Sale _sale;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            _sale = new Sale(null, new ItemBuilder());
+            _discountManager = Substitute.For<IManageDiscounts>();
+            var discount = Substitute.For<IProvideDiscounts>();
+            _discountManager.GetDiscount(Arg.Any<string>()).Returns(discount);
+
+            _sale = new Sale(_discountManager, new ItemBuilder());
             _sale.AddItem("1245");
         }
 
@@ -26,6 +34,12 @@ namespace GroceryStore.Tests.SaleTests
         public void ThereShouldBeOneLineItem()
         {
             _sale.LineItems.Count.Should().Be(1);
+        }
+
+        [Test]
+        public void GetDiscountShouldBeInvokedOnTheDiscountManager()
+        {
+            _discountManager.Received(1).GetDiscount("1245");
         }
     }
 }

@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace GroceryStore.Tests.LineItemTests
 {
     [TestFixture]
-    public class WhenALineItemHasANullDiscountProvider
+    public class WhenALineItemIsGivenANullDiscountProvider
     {
         private LineItem _lineItem;
 
