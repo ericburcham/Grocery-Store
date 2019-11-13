@@ -19,7 +19,7 @@ namespace GroceryStore.Tests.Discounts.DoNothingDiscountTests
         }
 
         [Test]
-        public void TheDiscountShouldBeZero()
+        public void TheDiscountShouldBeCorrect()
         {
             _discount.Should().Be(0M);
         }
