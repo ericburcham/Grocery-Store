@@ -8,7 +8,8 @@ namespace GroceryStore
 
         public LineItem(Item item, IProvideDiscounts discountProvider = null)
         {
-            _discountProvider = discountProvider;
+            _discountProvider = discountProvider ?? new DoNothingDiscount();
+
             Item = item;
             AddOne();
         }
